@@ -1,0 +1,87 @@
+@use "../_foundation/media" as *
+@use "../_foundation/base" as *
+
+body
+  background-image: url("@/assets/images/BG.jpg")
+  color: white
+  text-align: center
+  font-family: "the-seasons", sans-serif
+  font-style: normal
+  line-height: 1.4
+  font-weight: 300
+  font-size: 18px
+  @include media-sptb
+    font-size: 16px
+
+  #tsparticles
+    position: fixed
+    z-index: -1
+    width: 100%
+    height: 100%
+    pointer-events: none
+    opacity: 1
+
+  // header start
+  header
+    height: 100vh
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    overflow: hidden
+
+    .mainTitle
+      position: relative
+      font-size: clamp(2rem, 3vw, 3rem)
+      margin-left: -25vw
+      @include media-narrow
+        margin-left: -35vw
+
+    .mainTitle1
+      position: relative
+      color: #ffc5e7
+      font-size: clamp(3.3rem, 8vw, 10rem)
+      display: flex
+      justify-content: center
+      overflow: hidden
+
+    .mainTitle2
+      font-size: clamp(2rem, 3.5vw, 4rem)
+      margin-left: 25vw
+      @include media-narrow
+        margin-left: 40vw
+
+    .scrollDown
+      position: absolute
+      left: 50%
+      bottom: 30px
+      transform: translateX(-50%)
+      &::after
+        content: ''
+        position: absolute
+        bottom: -10px
+        transform: translateX(-50%)
+        left: 52%
+        width: 11px
+        height: 52px
+        pointer-events: none
+        background: url(@/assets/images/scroll.png) no-repeat 0% 0%
+        background-size: contain
+
+      div
+        height: 25px
+        overflow: hidden
+        p
+          position: relative
+          font-size: 25px
+          background-clip: text
+          animation: scrollAni 1s ease-out infinite
+          text-fill-color: transparent
+          &:nth-child(2)
+            top: 23px
+
+  @keyframes scrollAni
+    0%
+      top: -30px
+    100%
+      top: 0px

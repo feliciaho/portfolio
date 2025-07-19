@@ -1,0 +1,97 @@
+<script setup>
+import NavBarCom from './components/NavBarCom.vue'
+import HeaderCom from './components/HeaderCom.vue'
+import ExperiencesCom from './components/ExperiencesCom.vue'
+import ProjectsCom from './components/ProjectsCom.vue'
+import FooterCom from './components/FooterCom.vue'
+import ParticlesBg from './components/ParticlesBg.vue'
+
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  gsap.set(".secTitle", { scale: 0.5 });
+  gsap.set(".project_s1", { yPercent: 0 });
+  gsap.set(".banner", { yPercent: 10 });
+  gsap.set(".secText", { yPercent: -15 });
+  // 一開始就動
+  gsap.to(".mainTitle1", {
+    xPercent: 200,
+    scale: 5,
+    opacity: 0,
+    ease: "none",
+    scrollTrigger: {
+      scrub: 1,
+    },
+  })
+  // 當滾動到特定區域時，觸發動畫
+  document.querySelectorAll(".secTitle").forEach((secTitle) => {
+    gsap.to(secTitle, {
+      yPercent: 5,
+      scale: 1.2,
+      ease: "none",
+      scrollTrigger: {
+        trigger: secTitle,
+        scrub: 1,
+      },
+    });
+  });
+
+  document.querySelectorAll(".project_s1").forEach((project_s1) => {
+    gsap.to(project_s1, {
+      yPercent: 10,
+      ease: "none",
+      scale: 1,
+      scrollTrigger: {
+        trigger: project_s1,
+        scrub: 1,
+      },
+    });
+  });
+
+  document.querySelectorAll(".banner").forEach((banner) => {
+    gsap.to(banner, {
+      yPercent: -10,
+      ease: "none",
+      scale: 1,
+      scrollTrigger: {
+        trigger: banner,
+        scrub: 1,
+      },
+    });
+  });
+
+  document.querySelectorAll(".secText").forEach((secText) => {
+    gsap.to(secText, {
+      yPercent: 5,
+      ease: "none",
+      scale: 1,
+      scrollTrigger: {
+        trigger: secText,
+        scrub: 1,
+      },
+    });
+  });
+
+})
+
+</script>
+
+<template>
+  <ParticlesBg></ParticlesBg>
+  <NavBarCom></NavBarCom>
+  <HeaderCom></HeaderCom>
+  <ExperiencesCom></ExperiencesCom>
+  <section class="s2" id="s2">
+    <h1 class="secTitle">Side Projects</h1>
+    <ProjectsCom :projects="true"></ProjectsCom>
+  </section>
+  <section class="s3" id="s3">
+    <h1 class="secTitle">Company Projects</h1>
+    <ProjectsCom :projects="false"></ProjectsCom>
+  </section>
+  <FooterCom></FooterCom>
+</template>

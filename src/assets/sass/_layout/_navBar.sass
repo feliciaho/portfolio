@@ -1,0 +1,138 @@
+@use "../_foundation/media" as *
+@use "../_foundation/base" as *
+
+// svg style
+.svgImg
+  width: 1.5rem
+  height: 1.5rem
+  fill: #fff
+
+  &_nav
+    width: 2rem
+    fill: #fff
+    height: 2rem
+    transition: .3s all
+    &:hover
+      transform: scale(1.2)
+
+  &_sec
+    width: 1.5rem
+    height: 1.5rem
+    fill: #000000
+    display: inline-block
+    vertical-align: middle
+
+// navBar style
+.nav
+  position: fixed
+  background: linear-gradient(0deg, #24242400 15.05%, #4d4d4daf 85.34%)
+  color: #fff
+  z-index: 11
+  padding: 10px
+  width: 100%
+  box-sizing: border-box
+  @include media-sptb
+    background: linear-gradient(0deg, #242424e1 15.05%, #4d4d4daf 85.34%)
+
+  &_content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: 1200px
+    width: 100%
+    margin: 0 auto
+
+  .logo
+    display: flex
+    gap: 10px
+    a
+      transition: .2s all
+      &:hover
+        filter: brightness(1.5)
+
+  // hamburger
+  .nav_hamburger
+    display: none
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: none
+    border: none
+    cursor: pointer
+    z-index: 1101
+    @include  media-sptb
+      display: flex
+
+    span
+      display: block
+      width: 25px
+      height: 3px
+      margin: 3px 0
+      background: #ffff
+      border-radius: 2px
+      transition: 0.3s
+
+    // hamburger animation
+    & span.open:nth-child(1)
+      transform: translateY(9px) rotate(45deg)
+    & span.open:nth-child(2)
+      opacity: 0
+    & span.open:nth-child(3)
+      transform: translateY(-9px) rotate(-45deg)
+
+  // navBar menu
+  .nav_menu
+    display: flex
+    list-style: none
+    justify-content: center
+    gap: 25px
+    flex-grow: 1
+    &.open
+      transform: translateX(0)
+
+    @include media-sptb
+      position: fixed
+      top: 0
+      right: 0
+      height: 100vh
+      flex-direction: column
+      justify-content: flex-start
+      transform: translateX(100%)
+      transition: transform 0.3s
+      width: 170px
+      padding: 50px 28px
+      gap: 0px
+      margin-top: 59px
+      background: linear-gradient(0deg, rgba(36, 36, 36, 0.882) 15.05%, rgba(77, 77, 77, 0.686) 85.34%)
+
+      li
+        width: 100%
+        a
+          width: 100%
+          display: block
+          padding: 10px 0
+
+    li.nav-item
+      position: relative
+      padding: 20px 0px
+      @include media-sptb
+        padding: unset
+      &:last-child
+        .nav-link
+          border: 0px
+
+      .nav-link
+        border-right: 1px solid #ffc5e7
+        padding: 0 40px
+        color: #ffff
+        cursor: pointer
+        font-size: 20px
+        @include media-sptb
+          padding: unset
+          padding: 30px 0
+          border-right: 0
+          border-bottom: 1px solid #ffc5e7
+        &:hover
+          color: #ffff
+          position: relative
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),0 0 10px rgba(255, 255, 255, 0.6),0 0 15px rgba(255, 255, 255, 0.5),
