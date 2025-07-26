@@ -5,13 +5,14 @@ const experiences = ref([
     type: "Frontend Designer",
     name: "Happytuk",
     time: "April, 2024~April, 2025",
-    skills: ["Pug", "SASS", "jQuery", "Gulp", "CICD", "Vue", "Git"],
+    skills: ["Pug", "SASS", "jQuery", "Gulp", "Vue.js", "Git", "Gitlab CICD"],
     list: [
-      "負責開發並維護官網及活動頁，使用 Pug、SASS 和 JavaScript，jQuery 實現響應式設計和互動功能。",
-      "使用 Vue 框架，協助公司將遊戲活動頁面從 JavaScript、jQuery 過渡到 Vue 開發模式。",
-      "使用 Gulp 進行前端自動化工具，提升開發效率。",
-      "使用 Git 進行版本控制，並進行 CICD 部署。",
-      "視覺設計：負責製作網頁主視覺、遊戲 banner。",
+      "協助官網與活動頁面開發，使用 Pug、Sass、jQuery 建構響應式網頁",
+      "將 Vue.js 導入公司原有專案，建立模組化架構，提升前端開發效率30%與後續維護性。",
+      "參與 GitLab CI/CD 自動部署流程，提升部署準確性與自動化程度，減少部署時間 20%。",
+      "與韓國遊戲廠商跨語言協作，負責前端需求溝通與時程協調",
+      "導入 Copilot 與 Cursor 等 AI 工具至開發流程，提升開發效率50%",
+      "指導新進成員學習切版與框架開發，強化團隊整體開發能力",
     ],
   },
   {
@@ -24,14 +25,14 @@ const experiences = ref([
       "jQuery",
       "javascript",
       "RESTful API",
-      "Vue",
+      "Vue.js",
       "Git",
     ],
     list: [
-      "負責開發並維護官網及活動頁，使用 HTML、SCSS 和 JavaScript，jQuery 實現響應式設計和互動功能。",
-      "引入並整合 Vue 框架，協助公司從 JavaScript、jQuery 過渡到 Vue 開發模式。",
-      "RESTful API 串接，實現與後端系統的數據交互和通知。",
-      "視覺設計：負責製作網頁主視覺、遊戲 banner。",
+      "串接 RESTful API 實現資料讀寫功能，支援前後端整合開發流程。",
+      "負責遊戲官網與活動頁 UI 設計與前端開發，實作 HTML / SCSS / jQuery 響應式互動頁面",
+      "協助團隊導入 Vue.js 框架，優化專案效能20%與可維護性",
+      "主導設計活動 Banner 與主視覺，並協助網站 UI 優化提升點擊率與風格統一",
     ],
   },
 ])
@@ -40,7 +41,7 @@ const experiences = ref([
 <template>
   <section class="s1" id="s1">
     <h1 class="secTitle">Experiences</h1>
-    <div class="project_s1" v-for="(i, index) in experiences" :key="index+'experiences'">
+    <div class="project_s1" v-for="(i, index) in experiences" :key="index + 'experiences'">
       <!-- text -->
       <div class="secText_s1">
         <div class="secTitleWrap">

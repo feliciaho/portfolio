@@ -17,7 +17,7 @@ const companyProjects = ref([
   {
     type: "Cabel",
     name: "Activity website",
-    skills: ["HTML", "SASS", "javascript", "Vue", "RESTful API"],
+    skills: ["Vue", "HTML", "SASS", "javascript", "RESTful API"],
     webUrl: "https://feliciaho.github.io/cbo_20240129",
     githubUrl: "https://github.com/feliciaho/cbo_20240129",
     img: cboBanner,
@@ -33,7 +33,7 @@ const companyProjects = ref([
   {
     type: "EOV",
     name: "official website",
-    skills: ["Pug", "SASS", "jQuery", "Gulp", "CICD"],
+    skills: ["Pug", "SASS", "jQuery", "Gulp", "Gitlab CICD"],
     webUrl: "https://eov.mangot5.com/eov/index",
     githubUrl: "https://github.com/feliciaho/eov",
     img: eovBanner,
@@ -41,7 +41,7 @@ const companyProjects = ref([
   {
     type: "LostArk",
     name: "Info website",
-    skills: ["Pug", "SASS", "jQuery", "Vue", "Gulp", "CICD"],
+    skills: ["Vue", "Pug", "SASS", "jQuery", "Gulp", "Gitlab CICD"],
     webUrl:
       "https://landing.mangot5.com/template/lostark/event/250327_pletze/index.html",
     githubUrl: "https://github.com/feliciaho/250327_pletze",
@@ -53,7 +53,14 @@ const sideProjects = ref(
     {
       type: "sideProjects",
       name: "Recipe website",
-      skills: ["HTML", "SASS", "javascript", "RESTful API", "Vue", "Vite"],
+      skills: [
+        "Vue3",
+        "Vite",
+        "Pinia",
+        "Javascript",
+        "RESTful API",
+        "Github Actions",
+      ],
       webUrl: "https://feliciaho.github.io/recipeWeb_new/#/homeView",
       githubUrl: "https://github.com/feliciaho/recipeWeb_new",
       figma: false,
@@ -63,14 +70,13 @@ const sideProjects = ref(
       type: "sideProjects",
       name: "Homestay website",
       skills: [
-        "Figma",
-        "Figma MCP to Crusor",
-        "HTML",
-        "SASS",
-        "javascript",
-        "RESTful API",
-        "Vue",
+        "Figma MCP",
+        "Vue3",
         "Vite",
+        "Pinia",
+        "Javascript",
+        "RESTful API",
+        "Github Actions",
       ],
       webUrl: "https://feliciaho.github.io/bookingWeb/#/homeView",
       githubUrl: "https://github.com/feliciaho/bookingWeb",
